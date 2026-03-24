@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-primary: hsl(232, 45%, 6%);
+  --color-bg-secondary: hsla(223, 35%, 15%, 0.6);
+  --color-text-muted: hsla(0, 0%, 100%, 0.8);
+  --color-btn-primary: hsl(218, 11%, 84%);
+  --color-btn-secondary: hsl(226, 58%, 44%);
+  --color-btn-secondary-hover: hsl(226, 58%, 54%);
+  --color-btn-bg-active: hsl(218, 11%, 84%);
+  --color-icon: hsl(222, 11%, 35%);
+  --color-icon-hover: hsl(210, 13%, 85%);
+  --color-btn-translate-border: hsl(217, 84%, 72%);
+  --color-bg-dropdown: hsla(223, 35%, 11%, 0.85);
+  --color-footer-credit: hsl(207, 90%, 61%);
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--color-bg-primary);
+  margin: 0;
+}
+
+/* позадинската слика останува фиксна, додека содржината се скрола преку неа */
+body::before {
+  content: "";
+  position: fixed;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  min-height: 345px;
+  max-height: 100%;
+  background-image: url('/hero-img.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+textarea::-webkit-scrollbar {
+  width: 2px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(77,85,98,0.8); /* твоја иконска боја */
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (min-width: 1024px) {
+  body::before {
+    background-image: url('/hero-img.jpg');
+    top: 5%;
+  }
+}
