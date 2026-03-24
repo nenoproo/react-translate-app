@@ -16,14 +16,14 @@
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background-color: var(--color-bg-primary);
   margin: 0;
 }
 
 /* позадинската слика останува фиксна, додека содржината се скрола преку неа */
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   top: 14%;
   left: 50%;
@@ -43,7 +43,7 @@ textarea::-webkit-scrollbar {
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background-color: rgba(77,85,98,0.8); /* твоја иконска боја */
+  background-color: rgba(77, 85, 98, 0.8); /* твоја иконска боја */
   border-radius: 10px;
 }
 
@@ -54,6 +54,7 @@ textarea::-webkit-scrollbar-track {
 @media (min-width: 1024px) {
   body::before {
     background-image: url('/hero-img.jpg');
-    top: 5%;
+    transform: translateX(-50%);
+    background-position: center;
   }
 }

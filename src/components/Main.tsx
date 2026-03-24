@@ -262,6 +262,7 @@ const Main = () => {
                       }}
                     >
                       {targetLangMenu}
+                      <img src={expandDownIcon} aria-hidden="true" />
                     </button>
     
                     {/* Dropdown target menu */}
