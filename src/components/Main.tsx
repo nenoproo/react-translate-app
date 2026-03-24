@@ -15,8 +15,8 @@ const Main = () => {
   const [targetLangMenu, setTargetLangMenu] = useState('russian');
   const [sourceText, setSourceText] = useState('');
   const [targetText, setTargetText] = useState('');
-  const sourceLangMenuRef = useRef(null);
-  const targetLangMenuRef = useRef(null);
+  const sourceLangMenuRef = useRef<HTMLDivElement | null>(null);
+  const targetLangMenuRef = useRef<HTMLDivElement | null>(null);
 
    const fetchTranslate = async () => {
       console.log('fetchTranslate is initiated.');
@@ -74,7 +74,7 @@ const Main = () => {
   
     useEffect(() => {
       let handler = (e: MouseEvent) => {
-        if (!sourceLangMenuRef.current.contains(e.target)) {
+        if (!sourceLangMenuRef.current?.contains(e.target as Node)) {
           setOpenMenu(false);
         }
       };
@@ -89,7 +89,7 @@ const Main = () => {
     useEffect(() => {
       // функцијa handler за да се смени свичот за да се затвори
       let handler = (e: MouseEvent) => {
-        if (!targetLangMenuRef.current.contains(e.target)) { // ако корисникот не кликнал на менито, а без ! значи ако корисникот кликнал
+        if (!targetLangMenuRef.current?.contains(e.target as Node)) { // ако корисникот не кликнал на менито, а без ! значи ако корисникот кликнал
           setOpenTargetMenu(false);
         }
       };
